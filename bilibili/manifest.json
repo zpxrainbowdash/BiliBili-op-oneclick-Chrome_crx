@@ -17,6 +17,7 @@
 		{
 			"matches": ["http://www.bilibili.com/bangumi/play/ss*", "https://www.bilibili.com/bangumi/play/ss*"],
 			"js": ["js/main.js"],
+			"web_accessible_resources": ["js/inject.js"],
 			"run_at": "document_end"
 		}
 	],
