@@ -1,0 +1,39 @@
+{
+	"manifest_version": 2,
+	"name": "bilibili跳op",
+	"version": "1.0.0",
+	"description": "这是我的第一个谷歌插件，跳过bilibili番剧op",
+	"icons":
+	{
+		"128": "img/bilibili.png"
+	},
+	"browser_action": 
+	{
+		"default_title": "bilibili跳op",
+		"default_popup": "page/popup.html"
+	},
+	"content_scripts": 
+	[
+		{
+			"matches": ["http://www.bilibili.com/bangumi/play/ss*", "https://www.bilibili.com/bangumi/play/ss*"],
+			"js": ["js/main.js"],
+			"run_at": "document_end"
+		}
+	],
+	"permissions":
+	[
+		"activeTab",
+		"declarativeContent",
+		"contextMenus",
+		"tabs",
+		"webRequest",
+		"webRequestBlocking",
+		"storage",
+		"http://www.bilibili.com/*",
+		"https://www.bilibili.com/*"
+	],
+	"options_ui":
+	{
+		"page": "page/options.html"
+	}
+}
