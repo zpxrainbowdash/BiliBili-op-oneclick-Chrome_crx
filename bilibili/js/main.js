@@ -1,17 +1,7 @@
-var inputjs = document.createElement('script');
-inputjs.innerHTML = `
-	PassOp = function(){
-		alert("提示信息！"); 
-	}
-`;
-document.getElementsByTagName('head')[0].appendChild(inputjs);
-
-
 setTimeout("butn()",3000 );
-
+setTimeout("jplink()",4000 );
+setTimeout("inputjs()",4500 );
 function butn(){
-
-
 	const passbtn = document.createElement('div');
 	passbtn.setAttribute('class', 'passop');
 	passbtn.innerHTML = `
@@ -28,4 +18,30 @@ function butn(){
 	</div>
 	`;
 	document.getElementsByClassName("bilibili-player-video-control-bottom-right")[0].insertBefore(passbtn, document.getElementsByClassName("bilibili-player-video-control-bottom-right")[0].firstChild);
+}
+
+function jplink(){
+	const inputjumplink = document.createElement('div');
+	inputjumplink.innerHTML = `
+	<div class="list-item reply-wrap " hidden="hidden" >
+		<div class="con ">
+			<p class="text">
+				<br>
+					<a id="jumptovideo" class="video-seek" data-time="20" ></a>
+				<br>
+			</p>
+		</div>
+	</div>
+`;
+document.getElementsByClassName("comment-list ")[0].insertBefore(inputjumplink, document.getElementsByClassName("comment-list ")[0].firstChild);
+}
+
+function inputjs(){
+	var inputjs = document.createElement('script');
+	inputjs.innerHTML = `
+		PassOp = function(){
+			document.getElementById("jumptovideo").click();
+		}
+	`;
+	document.getElementsByTagName('head')[0].appendChild(inputjs);
 }
