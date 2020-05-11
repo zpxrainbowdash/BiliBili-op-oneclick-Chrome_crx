@@ -27,7 +27,7 @@ function jplink(){
 		<div class="con ">
 			<p class="text">
 				<br>
-					<a id="jumptovideo" class="video-seek" data-time="20" ></a>
+					<a id="jumptovideo" class="video-seek" data-time="60" ></a>
 				<br>
 			</p>
 		</div>
