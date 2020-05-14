@@ -20,27 +20,12 @@ function butn(){
 	document.getElementsByClassName("bilibili-player-video-control-bottom-right")[0].insertBefore(passbtn, document.getElementsByClassName("bilibili-player-video-control-bottom-right")[0].firstChild);
 }
 
-function jplink(){
-	const inputjumplink = document.createElement('div');
-	inputjumplink.innerHTML = `
-	<div class="list-item reply-wrap " hidden="hidden" >
-		<div class="con ">
-			<p class="text">
-				<br>
-					<a id="jumptovideo" class="video-seek" data-time="60" ></a>
-				<br>
-			</p>
-		</div>
-	</div>
-`;
-document.getElementsByClassName("comment-list ")[0].insertBefore(inputjumplink, document.getElementsByClassName("comment-list ")[0].firstChild);
-}
-
 function inputjs(){
 	var inputjs = document.createElement('script');
 	inputjs.innerHTML = `
 		PassOp = function(){
-			document.getElementById("jumptovideo").click();
+			var passtime = document.getElementsByTagName("video")[0].currentTime
+			document.getElementsByTagName("video")[0].currentTime=passtime+90;
 		}
 	`;
 	document.getElementsByTagName('head')[0].appendChild(inputjs);
